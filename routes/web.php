@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\BrodcastController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -27,7 +28,8 @@ Route::post('/register', [AuthController::class ,'register'])->name('register');
 Route::post('/logout', [AuthController::class ,'logout'])->name('logout');
 
 
-
 Route::middleware(['auth', 'admin'])->group(function() {
     Route::get('/dashboard', [DashboardController::class, 'dashboard']);
+    Route::get('/all-alerts', [BrodcastController::class, 'allAlerts']);
+    Route::post('/submit-notification', [BrodcastController::class,'submitNotification'])->name('submit-notification');
 });
