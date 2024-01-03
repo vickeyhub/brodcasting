@@ -41,12 +41,12 @@
                 $('main .alert-panel').show();
                 $('main .alert-panel').append(`<div class="bg-dark text-white p-5"><h1><i class="bi bi-exclamation-triangle-fill"></i> ${e.data.title}</h1><hr><p>${e.data.description}</p>
         </div>`);
-               setTimeout(() => {
-                $('main .alert-panel').append("");
-                $('main .alert-panel').hide();
-                $('main .video-panel').show();
-               }, e.data.duration * 1000);
-            });
+        setTimeout(() => {
+            $('main .alert-panel').html("");
+            $('main .alert-panel').hide();
+            $('main .video-panel').show();
+            }, e.data.duration * 1000);
+        });
     </script>
 </body>
 

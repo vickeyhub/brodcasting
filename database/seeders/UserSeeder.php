@@ -28,6 +28,9 @@ class UserSeeder extends Seeder
                 'user_role' => 'customer'
             ]
         ];
-        User::create($data);
+
+        foreach($data as $user){
+            User::create($user);
+        }
     }
 }

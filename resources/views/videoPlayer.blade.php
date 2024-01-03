@@ -37,7 +37,7 @@
         </div>`);
                 setTimeout(() => {
                     $('main .alert-panel').hide();
-                    $('main .alert-panel').append("");
+                    $('main .alert-panel').html("");
                     $('main .video-panel').show();
                     video.play();
                 }, e.data.duration * 1000);
